@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Apple{
+            constructor(){
+                this.weight = 10;
+            }
+            setWeight(weight){
+                this.weight =weight;
+
+            }
+            getWeight(){
+                return this.weight;
+            }
+            decrease(){
+                if(this.weight >0){
+                    this.weight--;
+                } 
+
+            }
+        }
+        class Human{
+            constructor(name,gender,weight){
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+
+            }
+            saySomething(say){
+                return console.log(say);
+            }
+            eat(apple){
+                return apple.decrease();
+            }
+            getWeight(weight){
+                return this.weight + this.eat();
+            }
+            checkApple(apple){
+                return apple.getWeight();
+            }
+        }
+    </script>
+</body>
+</html>
