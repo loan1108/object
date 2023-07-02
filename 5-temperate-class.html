@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="value" type="number" onchange="displayResult()" />
+    <script>
+      class Temperature {
+        constructor(celsius) {
+          this.celsius = celsius;
+        }
+        convertToFah() {
+          return (this.celsius * 9) / 5 + 32;
+        }
+        convertToKel() {
+          return this.celsius + 273.15;
+        }
+      }
+      function displayResult() {
+        let input = +document.getElementById("value").value;
+        let celsius = new Temperature(input);
+        if (celsius.celsius >= -273) {
+          alert("Fah: " + celsius.convertToFah() + " F");
+          alert("Kelvin: " + celsius.convertToKel() + " K");
+        } else {
+          alert(
+            "the lowest temperature recorded in C is -273 C. Please choose the other"
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class MyDate{
+            constructor(day,month,year){
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            getDay(){
+                return this.day;
+            }
+            getMonth(){
+                return this.month;
+            }
+            getYear(){
+                return this.year;
+            }
+            setDay(day){
+                this.day = day;
+            }
+            setMonth(month){
+                this.month = month;
+            }
+            setYear(year){
+                this.year = year;
+            }
+        }
+        let date = new MyDate(2,2,2007);
+        let day = date.getDay();
+        // day = date.setDay(3);
+        // day = date.getDay()
+        let month = date.getMonth();
+        // month = date.setMonth(4);
+        // month = date.getMonth();
+        let year = date.getYear();
+        // year = date.setYear(2023);
+        // year = date.getYear();
+        
+        alert(day +"/"+month+"/"+year);
+        let arr=[]
+        for(let i in date){
+            arr.push(date[i]);
+            
+
+        }
+        let a = arr.join("/")
+        console.log(a)
+    </script>
+</body>
+</html>

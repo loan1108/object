@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="paper" width="1000" height="800"></canvas>
+    <script>
+        let paper = document.getElementById("paper");
+        let pen = paper.getContext('2d');
+        class Rectangle{
+            constructor(width,height){
+                this.width = width;
+                this.height = height;
+            }
+            getArea(){
+                return this.width *this.height;
+            }
+            getPerimeter(){
+                return 2*(this.width + this.height);
+            }
+            drawRect(){
+                pen.beginPath();
+                pen.rect(20,20,this.width,this.height);
+                pen.stroke();
+                pen.closePath();
+            }
+        }
+        let rect = new Rectangle(100,80);
+        rect.drawRect();
+        alert("Area:"+rect.getArea());
+        alert("Perimeter:"+rect.getPerimeter());
+    </script>
+</body>
+</html>
